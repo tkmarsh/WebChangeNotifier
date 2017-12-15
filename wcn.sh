@@ -19,13 +19,13 @@ fi
 
 if [ "${md5::-3}" != "$prevmd5" ]; then
  printf "Page updated!\n"
- #{
+ {
   curl -s \
   --form-string "token=TOKEN" \
   --form-string "user=USER" \
   --form-string "message=MESSAGE" \
   https://api.pushover.net/1/messages.json
-#} &> /dev/null
+} &> /dev/null
 else
  printf "No updates yet :^(\n"
 fi
